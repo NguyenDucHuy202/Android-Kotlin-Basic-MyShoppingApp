@@ -45,43 +45,11 @@ class MainActivity : ComponentActivity() {
         }
     }
 }
-data class ShoppingItem(val name: String,
-                        val quantity: Int,
-                        val id: Int,
-                        val isEditting: Boolean,
 
 
 
-    )
 
 
-@Composable
-fun ShoppingListApp() {
-    var shoppingItems by remember { mutableStateOf(mutableListOf<ShoppingItem>()) }
-    Column(
-        modifier = Modifier
-            .fillMaxSize()
-            .padding(50.dp), // Thêm padding để không dính vào mép
-//        horizontalAlignment = Alignment.CenterHorizontally, // Căn giữa các phần tử trong Column
-//        verticalArrangement = Arrangement.Center // Căn giữa theo chiều dọc
-    ) {
-        Button( onClick = {},
-            modifier = Modifier.align(Alignment.CenterHorizontally)
-
-        ) {
-            Text(text = "Add Item")
-        }
-        LazyColumn(
-            modifier = Modifier.align(Alignment.CenterHorizontally).fillMaxSize()
-        ) {
-            items(shoppingItems)
-            {
-                item ->
-                Text(text = item.name)
-            }
-        }
-    }
-}
 @Preview(showBackground = true)
 @Composable
 fun GreetingPreview() {
